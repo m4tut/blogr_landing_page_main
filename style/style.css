@@ -37,4 +37,185 @@
 
 body {
     font-size: 16px;
+    color: var(--white);
+}
+
+button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.container {
+    width: 1110px;
+    margin: 0 auto;
+}
+
+/* background */
+.background {
+    position: absolute;
+    z-index: -20;
+    top: 0;
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(90deg, var(--veryLightRed), var(--lightRed));
+    border-bottom-left-radius: 100px;
+    overflow: hidden;
+}
+
+.background::before {
+    content: '';
+    width: 3175px;
+    height: 3174px;
+    background-image: url(../images/bg-pattern-intro.svg);
+
+    position: absolute;
+    top: -1350px;
+    left: -460px;
+}
+
+/* header */
+.header {
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.header_logo {
+    margin-right: 40px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav_item {
+    margin: 0 20px;
+    padding: 5px;
+    position: relative;
+}
+
+/* work svg */
+.nav_item svg {
+    position: absolute;
+    top: 12px;
+    right: -12px;
+    transform: rotate(0deg);
+    transition: 0.3s;
+}
+
+.nav_item svg path {
+    transition: opacity 0.3s;
+}
+
+.nav_item:hover svg {
+    top: 11px;
+    transform: rotate(-180deg);
+}
+
+.nav_item:hover svg path {
+    opacity: 1;
+}
+
+/* work btn */
+.nav_btn {
+    font-family: var(--fontOverpass);
+    font-weight: 600;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    position: relative;
+}
+
+.nav_btn::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--white);
+    height: 2px;
+    width: 0;
+    transition: width 0.3s;
+}
+
+.nav_item:hover .nav_btn {
+    opacity: 1;
+}
+
+.nav_item:hover .nav_btn::after {
+    width: 100%;
+}
+
+/* work list */
+.list {
+    position: absolute;
+    z-index: -100;
+    top: 35px;
+    left: -25px;
+    transition: all 0.3s;
+    list-style: none;
+
+    background-color: var(--white);
+    color: var(--veryDarkBlackBlue);
+    font-family: var(--fontUbuntu);
+    font-weight: 500;
+    width: 170px;
+    padding: 25px;
+    line-height: 2rem;
+    border-radius: 10px;
+}
+
+.nav_item:hover .list {
+    z-index: 0;
+    opacity: 1;
+}
+
+.list li:hover {
+    font-weight: 700;
+}
+
+/* work btn right */
+.btn {
+    display: flex;
+    align-items: center;
+}
+
+#login,
+#signUp {
+    font-family: var(--fontOverpass);
+    font-weight: 600;
+}
+
+#login {
+    opacity: 0.7;
+    margin-right: 50px;
+    transition: opacity 0.3s;
+}
+
+#login:hover {
+    opacity: 1;
+}
+
+#signUp {
+    width: 135px;
+    height: 50px;
+    background-color: var(--white);
+    color: var(--lightRed);
+    border-radius: 50px;
+    transition: color 0.3s, background 0.3s;
+}
+
+#signUp:hover {
+    color: var(--white);
+    background-color: var(--veryLightRed);
 }
