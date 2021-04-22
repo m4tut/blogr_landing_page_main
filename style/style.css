@@ -5,7 +5,7 @@
     /* ### Primary */
     --lightRed: hsl(356, 100%, 66%); /* (CTA text) */
     --veryLightRed: hsl(355, 100%, 74%); /* (CTA hover background) */
-    --VeryDarkBlue: hsl(208, 49%, 24%); /* (headings) */
+    --veryDarkBlue: hsl(208, 49%, 24%); /* (headings) */
 
     /* ### Neutral */
     --white: hsl(0, 0%, 100%); /* (text) */
@@ -38,6 +38,7 @@
 body {
     font-size: 16px;
     color: var(--white);
+    overflow-x: hidden;
 }
 
 button {
@@ -185,7 +186,7 @@ button {
 }
 
 /* work btn right */
-.btn {
+.btn_block {
     display: flex;
     align-items: center;
 }
@@ -206,7 +207,61 @@ button {
     opacity: 1;
 }
 
-#signUp {
+/* additional header */
+.additional_header {
+    text-align: center;
+    margin-top: 130px;
+}
+
+.additional_title {
+    font-family: var(--fontOverpass);
+    font-size: 3rem;
+}
+
+.additional_text {
+    font-family: var(--fontOverpass);
+    font-size: 1.1rem;
+    margin: 20px 0;
+    opacity: 0.7;
+}
+
+.btn-additional_header {
+    font-family: var(--fontOverpass);
+    font-weight: 600;
+    margin: 0 10px;
+}
+
+/* section designed */
+.designed {
+    margin-top: 280px;
+    position: relative;
+}
+
+.designed::after {
+    content: '';
+    width: 925px;
+    height: 882px;
+    background-image: url(../images/illustration-editor-desktop.svg);
+
+    position: absolute;
+    top: -22%;
+    right: -35%;
+}
+
+.designed_title {
+    color: var(--veryDarkBlue);
+    font-family: var(--fontOverpass);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.content_text {
+    width: 45%;
+}
+
+/* general */
+.btn-red {
     width: 135px;
     height: 50px;
     background-color: var(--white);
@@ -215,7 +270,31 @@ button {
     transition: color 0.3s, background 0.3s;
 }
 
-#signUp:hover {
+.btn-red:hover {
     color: var(--white);
     background-color: var(--veryLightRed);
+}
+
+.section_title {
+    color: var(--veryDarkBlue);
+    font-family: var(--fontOverpass);
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+}
+
+.section_text {
+    color: var(--veryDarkGrayishBlue);
+    font-family: var(--fontOverpass);
+    line-height: 1.5rem;
+    margin-bottom: 90px;
+}
+
+/* helpers */
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.mt-50 {
+    margin-top: 50px;
 }
