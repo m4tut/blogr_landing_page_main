@@ -39,6 +39,8 @@ body {
     font-size: 16px;
     color: var(--white);
     overflow-x: hidden;
+    font-family: var(--fontOverpass);
+    font-weight: 600;
 }
 
 button {
@@ -48,6 +50,11 @@ button {
     color: inherit;
     font-size: inherit;
     font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .container {
@@ -102,7 +109,7 @@ button {
 
 .nav_item {
     margin: 0 20px;
-    padding: 5px;
+    padding: 7px;
     position: relative;
 }
 
@@ -130,8 +137,6 @@ button {
 
 /* work btn */
 .nav_btn {
-    font-family: var(--fontOverpass);
-    font-weight: 600;
     opacity: 0.7;
     transition: opacity 0.3s;
     position: relative;
@@ -191,12 +196,6 @@ button {
     align-items: center;
 }
 
-#login,
-#signUp {
-    font-family: var(--fontOverpass);
-    font-weight: 600;
-}
-
 #login {
     opacity: 0.7;
     margin-right: 50px;
@@ -214,20 +213,16 @@ button {
 }
 
 .additional_title {
-    font-family: var(--fontOverpass);
     font-size: 3rem;
 }
 
 .additional_text {
-    font-family: var(--fontOverpass);
     font-size: 1.1rem;
     margin: 20px 0;
     opacity: 0.7;
 }
 
 .btn-additional_header {
-    font-family: var(--fontOverpass);
-    font-weight: 600;
     margin: 0 10px;
 }
 
@@ -246,11 +241,11 @@ button {
     position: absolute;
     top: -22%;
     right: -35%;
+    z-index: -1;
 }
 
 .designed_title {
     color: var(--veryDarkBlue);
-    font-family: var(--fontOverpass);
     font-size: 2rem;
     text-align: center;
     margin-bottom: 100px;
@@ -260,6 +255,127 @@ button {
     width: 45%;
 }
 
+/* state section */
+.state {
+    margin-top: 250px;
+    height: 400px;
+    background: linear-gradient(90deg, var(--veryDarkGrayBlue), var(--veryDarkDesaturatedBlue));
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    position: relative;
+}
+
+.state_circle {
+    position: absolute;
+    height: 100%;
+    width: 1014px;
+    overflow: hidden;
+}
+
+.state_circle img {
+    position: absolute;
+    z-index: 0;
+    top: -506px;
+    left: -205px;
+}
+
+.state_img {
+    position: relative;
+}
+
+.state_img img {
+    position: absolute;
+    top: -17%;
+}
+
+.state_title {
+    position: relative;
+    margin-top: 90px;
+    font-size: 2rem;
+}
+
+.state_text {
+    margin-top: 50px;
+    opacity: 0.7;
+    font-weight: 300;
+    line-height: 1.5rem;
+}
+
+/* subsection */
+.subsection {
+    margin: 300px 0;
+}
+
+.subsection_img {
+    position: relative;
+}
+
+.subsection_img::before {
+    content: '';
+    width: 974px;
+    height: 786px;
+    background-image: url(../images/illustration-laptop-desktop.svg);
+    position: absolute;
+    top: -200px;
+    left: -70%;
+}
+
+/* footer */
+.footer {
+    height: 360px;
+    width: 100%;
+    background-color: var(--veryDarkBlackBlue);
+    border-top-right-radius: 100px;
+}
+
+.footer_content {
+    padding-top: 80px;
+    display: grid;
+    grid-template-columns: 30% 60%;
+}
+
+.footer_nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer_nav_title {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.footer_list {
+    list-style: none;
+    line-height: 1.8rem;
+    opacity: 0.7;
+    font-weight: 300;
+}
+
+.footer_nav_item {
+    width: 100%;
+}
+
+.footer_list li {
+    position: relative;
+    display: inline;
+    padding: 5px;
+}
+
+.footer_list li::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    position: absolute;
+    background-color: var(--white);
+    left: 0;
+    bottom: 0;
+    transition: width 0.2s;
+}
+
+.footer_list li:hover::after {
+    width: 100%;
+}
+
 /* general */
 .btn-red {
     width: 135px;
@@ -267,7 +383,7 @@ button {
     background-color: var(--white);
     color: var(--lightRed);
     border-radius: 50px;
-    transition: color 0.3s, background 0.3s;
+    transition: color 0.3s, background-color 0.3s;
 }
 
 .btn-red:hover {
@@ -277,16 +393,15 @@ button {
 
 .section_title {
     color: var(--veryDarkBlue);
-    font-family: var(--fontOverpass);
     font-size: 1.5rem;
     margin-bottom: 25px;
 }
 
 .section_text {
     color: var(--veryDarkGrayishBlue);
-    font-family: var(--fontOverpass);
     line-height: 1.5rem;
     margin-bottom: 90px;
+    opacity: 0.7;
 }
 
 /* helpers */
@@ -297,4 +412,14 @@ button {
 
 .mt-50 {
     margin-top: 50px;
+}
+
+.container_grid {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    height: 100%;
+}
+
+.w100p {
+    width: 100%;
 }
